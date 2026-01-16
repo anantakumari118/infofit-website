@@ -38,9 +38,9 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const formData = new FormData(form);
     
     // Here you would typically send the data to your backend
+    // const formData = new FormData(form);
     // For now, we'll just show an alert
     alert('Thank you for your message! We will get back to you within 24-48 hours.');
     form.reset();

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowUpRight, FiUsers, FiAward, FiTarget, FiZap } from "react-icons/fi";
+import { FiUsers, FiAward, FiTarget, FiZap } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import founderImage from "../assets/founder-anish.jpeg";
 

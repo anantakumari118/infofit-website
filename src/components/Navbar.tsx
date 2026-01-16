@@ -1,18 +1,11 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<"services" | "about" | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const handleNavigate = (path: string) => {
-    navigate(path);
-    setOpenMenu(null);
-    setMobileMenuOpen(false);
-  };
 
   return (
     <header className="relative z-50 bg-white border-b sticky top-0 backdrop-blur-sm bg-white/95">

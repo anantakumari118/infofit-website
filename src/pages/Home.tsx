@@ -11,7 +11,6 @@ import {
 } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import teamWork from "../assets/team-work.jpg";
 
 /* ---------------- animations ---------------- */
 const fadeUp = {
@@ -65,32 +64,6 @@ const services = [
   },
 ];
 
-const industries = [
-  "Banking & Finance",
-  "Healthcare",
-  "Retail & E-Commerce",
-  "Education",
-  "Manufacturing",
-  "Public & Enterprise",
-];
-
-const successStories = [
-  {
-    title: "Rural Samriddhi Dashboard",
-    result:
-      "Custom enterprise dashboard transformed operations management and data tracking for improved efficiency.",
-    cta: "View project",
-    link: "https://app.rsamriddhi.com/login",
-  },
-  {
-    title: "Hope Physicians Website",
-    result:
-      "Professional healthcare website with modern design, accessibility, and trust-building features.",
-    cta: "View project",
-    link: "https://hopephysicians.com/",
-  },
-];
-
 const stats = [
   {
     value: "50+",
@@ -104,24 +77,6 @@ const stats = [
     tone: "from-purple-400 to-pink-300",
   },
   { value: "2023", label: "Founded", tone: "from-fuchsia-400 to-rose-300" },
-];
-
-const values = [
-  {
-    name: "Engineering Excellence",
-    quote:
-      "Built by engineers, for engineers. We prioritize technical depth, clean code, and long-term maintainability.",
-  },
-  {
-    name: "Startup Agility",
-    quote:
-      "Fast iteration, transparent communication, and flexible approaches tailored to growing businesses.",
-  },
-  {
-    name: "Partnership Mindset",
-    quote:
-      "We treat your success as our success. Long-term relationships built on trust, quality, and results.",
-  },
 ];
 
 const CountUp = ({ value }: { value: string }) => {

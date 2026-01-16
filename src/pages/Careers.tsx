@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiMapPin, FiClock, FiBriefcase } from "react-icons/fi";
-import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 32 },
@@ -71,9 +70,9 @@ const Careers = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const formData = new FormData(form);
     
     // Here you would typically send the data to your backend
+    // const formData = new FormData(form);
     // For now, we'll just show an alert
     alert('Thank you for your application! We will review your profile and get back to you soon.');
     form.reset();
