@@ -17,8 +17,12 @@ const Footer = () => {
           </p>
 
           <div className="mt-4 space-y-1 text-sm">
-            <p>📞 +91-9205493889</p>
-            <p>✉️ info@infofitsoftware.com</p>
+            <a href="tel:+919205493889" className="hover:text-indigo-400 transition block">
+              📞 +91-9205493889
+            </a>
+            <a href="mailto:info@infofitsoftware.com" className="hover:text-indigo-400 transition block">
+              ✉️ info@infofitsoftware.com
+            </a>
           </div>
 
           {/* SOCIAL */}
@@ -27,7 +31,7 @@ const Footer = () => {
               href="https://www.linkedin.com/company/infofit-software-solution-opc-private-limited/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm hover:text-pink-400 transition"
+              className="inline-flex items-center gap-2 text-sm hover:text-indigo-400 transition"
             >
               <FaLinkedin size={20} />
               LinkedIn
@@ -40,37 +44,37 @@ const Footer = () => {
           <h4 className="text-white font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/" className="hover:text-pink-400 transition">
+              <Link to="/" className="hover:text-indigo-400 transition">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-pink-400 transition">
+              <Link to="/about" className="hover:text-indigo-400 transition">
                 About Us
               </Link>
             </li>
             <li>
-              <Link to="/services" className="hover:text-pink-400 transition">
+              <Link to="/services" className="hover:text-indigo-400 transition">
                 Services
               </Link>
             </li>
             <li>
-              <Link to="/industries" className="hover:text-pink-400 transition">
+              <Link to="/industries" className="hover:text-indigo-400 transition">
                 Industries
               </Link>
             </li>
             <li>
-              <Link to="/products" className="hover:text-pink-400 transition">
+              <Link to="/products" className="hover:text-indigo-400 transition">
                 Products
               </Link>
             </li>
             <li>
-              <Link to="/careers" className="hover:text-pink-400 transition">
+              <Link to="/careers" className="hover:text-indigo-400 transition">
                 Careers
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-pink-400 transition">
+              <Link to="/contact" className="hover:text-indigo-400 transition">
                 Contact
               </Link>
             </li>
@@ -81,12 +85,36 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm">
-            <li>Web & Application Development</li>
-            <li>Mobile App Development</li>
-            <li>UI / UX Design</li>
-            <li>Custom Software Solutions</li>
-            <li>Startup Technology Support</li>
-            <li>Maintenance & Optimization</li>
+            <li>
+              <Link to="/services" className="hover:text-indigo-400 transition">
+                Cloud & Infrastructure
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-indigo-400 transition">
+                Data, AI & Analytics
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-indigo-400 transition">
+                Digital Engineering
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-indigo-400 transition">
+                Customer Success
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-indigo-400 transition">
+                Enterprise Applications
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-indigo-400 transition">
+                Cybersecurity
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -95,17 +123,17 @@ const Footer = () => {
           <h4 className="text-white font-semibold mb-4">Company</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link to="/about" className="hover:text-pink-400 transition">
+              <Link to="/about" className="hover:text-indigo-400 transition">
                 Who We Are
               </Link>
             </li>
             <li>
-              <Link to="/careers" className="hover:text-pink-400 transition">
+              <Link to="/careers" className="hover:text-indigo-400 transition">
                 Careers
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-pink-400 transition">
+              <Link to="/contact" className="hover:text-indigo-400 transition">
                 Get in Touch
               </Link>
             </li>

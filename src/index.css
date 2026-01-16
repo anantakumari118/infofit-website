@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-white text-darkText font-body;
 }
@@ -14,3 +18,24 @@ body {
   scrollbar-width: none;
 }
 
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid theme('colors.indigo.600');
+  outline-offset: 2px;
+}
+
+/* Custom gradient animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

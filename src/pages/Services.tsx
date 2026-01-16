@@ -1,69 +1,184 @@
 import { motion } from "framer-motion";
+import { FiArrowUpRight, FiCheckCircle, FiCode, FiCloud, FiShield, FiSmartphone, FiLayers, FiTrendingUp } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 32 },
   visible: { opacity: 1, y: 0 },
 };
 
 const stagger = {
   visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
+const services = [
+  {
+    icon: FiCloud,
+    title: "Cloud & Infrastructure",
+    desc: "Architect secure, multi-cloud foundations and resilient platforms with zero-trust controls.",
+    tag: "CloudXperienz delivery",
+    capabilities: [
+      "Multi-cloud migration & landing zones",
+      "Container orchestration & serverless",
+      "Infrastructure as code & automation",
+      "Cost optimization & FinOps",
+    ],
+  },
+  {
+    icon: FiCode,
+    title: "Data, AI & Analytics",
+    desc: "Modern data platforms, AI copilots, and applied intelligence at scale.",
+    tag: "Agentic AI ready",
+    capabilities: [
+      "Data mesh & lakehouse architecture",
+      "MLOps & AI model deployment",
+      "Real-time analytics & BI",
+      "Governance & data quality",
+    ],
+  },
+  {
+    icon: FiLayers,
+    title: "Digital Engineering",
+    desc: "Product engineering, API-led modernization, and composable tech stacks.",
+    tag: "Engineering DNA",
+    capabilities: [
+      "Full-stack product development",
+      "API-first architecture & microservices",
+      "Legacy modernization & refactoring",
+      "DevOps & CI/CD pipelines",
+    ],
+  },
+  {
+    icon: FiSmartphone,
+    title: "Customer Success",
+    desc: "Digital experiences, marketing automation, and omnichannel service journeys.",
+    tag: "Experience DNA",
+    capabilities: [
+      "Customer experience platforms",
+      "E-commerce & digital commerce",
+      "Marketing automation & personalization",
+      "Omnichannel integration",
+    ],
+  },
+  {
+    icon: FiTrendingUp,
+    title: "Enterprise Applications",
+    desc: "SAP, Salesforce, Microsoft, Oracle, and industry cloud stacks.",
+    tag: "Partner certified",
+    capabilities: [
+      "ERP & CRM implementations",
+      "Low-code & no-code platforms",
+      "Integration & API management",
+      "Application modernization",
+    ],
+  },
+  {
+    icon: FiShield,
+    title: "Cybersecurity",
+    desc: "Zero-trust controls, threat detection, and regulated compliance.",
+    tag: "Secure by design",
+    capabilities: [
+      "Identity & access management",
+      "Security operations & SOC",
+      "Compliance & risk management",
+      "Security architecture & assessment",
+    ],
+  },
+];
+
+const process = [
+  {
+    step: "01",
+    title: "Discovery & Strategy",
+    desc: "Understanding business goals, technical constraints, and success metrics.",
+  },
+  {
+    step: "02",
+    title: "Architecture & Design",
+    desc: "Designing scalable, secure architectures aligned with industry best practices.",
+  },
+  {
+    step: "03",
+    title: "Development & Integration",
+    desc: "Building with modern tech stacks, agile delivery, and continuous integration.",
+  },
+  {
+    step: "04",
+    title: "Testing & Quality",
+    desc: "Automated testing, performance validation, and security hardening.",
+  },
+  {
+    step: "05",
+    title: "Deployment & Launch",
+    desc: "Zero-downtime deployments, monitoring, and production readiness.",
+  },
+  {
+    step: "06",
+    title: "Optimization & Support",
+    desc: "Continuous improvement, performance tuning, and 24/7 support.",
+  },
+];
+
 const Services = () => {
   return (
-    <main className="bg-white text-gray-900 overflow-hidden">
-
+    <main className="bg-[#070915] text-white overflow-hidden">
       {/* ================= HERO ================= */}
-      <section className="py-28 bg-white">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-6 text-center"
-        >
-          <p className="uppercase text-sm tracking-wider text-pink-600 mb-4">
-            Our Services
-          </p>
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0b1026] via-[#0f1b3d] to-[#0b1026]">
+        <div className="pointer-events-none absolute inset-0 opacity-60">
+          <div className="absolute -left-10 -top-16 h-64 w-64 rounded-full blur-3xl bg-blue-700/40" />
+          <div className="absolute right-0 top-20 h-80 w-80 rounded-full blur-3xl bg-indigo-600/30" />
+        </div>
 
-          <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
-            Building technology that{" "}
-            <span className="text-pink-600">
-              actually moves businesses forward
-            </span>
-          </h1>
+        <div className="max-w-7xl mx-auto px-6 py-24 relative">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.9 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
+              From core modernization to experience reinvention.
+            </h1>
 
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            We partner with startups and businesses to design, develop and
-            deliver scalable digital solutions — with clarity, quality and
-            long-term impact.
-          </p>
-        </motion.div>
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+              Engineered platforms, applied AI, and customer-grade experiences
+              delivered with industry playbooks and partner accelerators.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
-      {/* ================= WHAT WE OFFER ================= */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-
+      {/* ================= SERVICES GRID ================= */}
+      <section className="bg-white text-gray-900">
+        <div className="max-w-7xl mx-auto px-6 py-20">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-16"
+            className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
           >
-            <h2 className="text-3xl font-semibold">What We Offer</h2>
-            <div className="w-16 h-1 bg-pink-600 mx-auto mt-4" />
-            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              From web and mobile development to custom solutions, we provide
-              comprehensive services to meet your technology needs.
-            </p>
+            <div>
+              <p className="text-sm uppercase tracking-[0.2em] text-indigo-600 mb-2">
+                Capabilities
+              </p>
+              <h2 className="text-4xl font-semibold leading-tight">
+                Comprehensive service portfolio.
+              </h2>
+              <p className="mt-3 text-gray-600 max-w-2xl">
+                End-to-end capabilities from infrastructure to customer
+                experience, powered by engineering excellence.
+              </p>
+            </div>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 text-indigo-600 font-medium hover:text-indigo-700 transition-colors"
+            >
+              Discuss your needs <FiArrowUpRight />
+            </Link>
           </motion.div>
 
           <motion.div
@@ -71,174 +186,92 @@ const Services = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-10"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {[
-              {
-                title: "Web & Application Development",
-                points: [
-                  "Custom web applications & dashboards",
-                  "Enterprise-grade architecture",
-                  "API & third-party integrations",
-                  "Secure & scalable systems",
-                ],
-              },
-              {
-                title: "Mobile App Development",
-                points: [
-                  "Android & iOS applications",
-                  "Cross-platform solutions",
-                  "Backend & cloud integration",
-                  "App store deployment support",
-                ],
-              },
-              {
-                title: "UI / UX Design",
-                points: [
-                  "User research & wireframing",
-                  "Modern UI systems",
-                  "Brand-aligned design",
-                  "Conversion-focused UX",
-                ],
-              },
-              {
-                title: "Custom Software Solutions",
-                points: [
-                  "Business automation tools",
-                  "Internal systems & platforms",
-                  "Scalable custom products",
-                  "Long-term maintainability",
-                ],
-              },
-              {
-                title: "Startup Technology Support",
-                points: [
-                  "MVP development",
-                  "Product & tech roadmap",
-                  "Architecture planning",
-                  "Scaling & optimization",
-                ],
-              },
-              {
-                title: "Maintenance & Optimization",
-                points: [
-                  "Performance optimization",
-                  "Security updates",
-                  "Feature enhancements",
-                  "Ongoing technical support",
-                ],
-              },
-            ].map((service) => (
-              <motion.div
-                key={service.title}
-                variants={fadeUp}
-                transition={{ duration: 0.6 }}
-                className="
-                  bg-white/70 backdrop-blur-xl
-                  border border-gray-200 rounded-2xl p-8
-                  shadow-sm hover:shadow-xl
-                  transition
-                "
-              >
-                <h3 className="text-xl font-semibold mb-4">
-                  {service.title}
-                </h3>
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  variants={fadeUp}
+                  className="p-6 rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-slate-50 shadow-[0_16px_45px_-28px_rgba(15,23,42,0.4)] hover:shadow-xl transition"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-400 flex items-center justify-center">
+                      <Icon className="text-white text-xl" />
+                    </div>
+                    <span className="text-xs uppercase tracking-[0.25em] text-indigo-500">
+                      {service.tag}
+                    </span>
+                  </div>
 
-                <ul className="space-y-2 text-sm text-gray-600">
-                  {service.points.map((point) => (
-                    <li key={point} className="flex gap-2">
-                      <span className="text-pink-600">✔</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                  <p className="text-sm text-gray-600 mb-4">{service.desc}</p>
+
+                  <ul className="space-y-2 mb-4">
+                    {service.capabilities.map((cap) => (
+                      <li key={cap} className="flex items-start gap-2 text-sm text-gray-600">
+                        <FiCheckCircle className="text-indigo-500 mt-0.5 flex-shrink-0" />
+                        <span>{cap}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 text-indigo-600 font-medium text-sm hover:text-indigo-700 transition-colors group-hover:gap-3"
+                  >
+                    Learn more <FiArrowUpRight />
+                  </Link>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
 
       {/* ================= PROCESS ================= */}
-      <section className="py-24 bg-[#faf7f5]">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-
+      <section className="bg-gradient-to-br from-[#0f162f] via-[#0c122a] to-[#0f162f]">
+        <div className="max-w-7xl mx-auto px-6 py-20">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl font-semibold mb-4">
-              Our Development Process
+            <p className="text-sm uppercase tracking-[0.2em] text-blue-300 mb-2">
+              Delivery methodology
+            </p>
+            <h2 className="text-4xl font-semibold leading-tight mb-4">
+              Proven process, predictable outcomes.
             </h2>
-            <div className="w-16 h-1 bg-pink-600 mx-auto mb-10" />
-            <p className="text-gray-600 max-w-2xl mx-auto mb-16">
-              A transparent, collaborative process designed to deliver clarity,
-              quality and predictable outcomes.
+            <p className="text-gray-200 max-w-2xl mx-auto">
+              Agile delivery with disciplined governance, outcome-linked
+              engagement models, and continuous value delivery.
             </p>
           </motion.div>
 
-          <div className="relative max-w-3xl mx-auto">
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-pink-200" />
-
-            {[
-              {
-                step: "1",
-                title: "Discovery & Requirements",
-                desc: "Understanding your business goals and project needs.",
-              },
-              {
-                step: "2",
-                title: "Planning & Design",
-                desc: "Designing the right architecture and user experience.",
-              },
-              {
-                step: "3",
-                title: "Development",
-                desc: "Building with modern technologies and best practices.",
-              },
-              {
-                step: "4",
-                title: "Testing & QA",
-                desc: "Ensuring quality, performance and reliability.",
-              },
-              {
-                step: "5",
-                title: "Deployment",
-                desc: "Smooth launch into production environments.",
-              },
-              {
-                step: "6",
-                title: "Support & Maintenance",
-                desc: "Continuous support and ongoing improvements.",
-              },
-            ].map((item, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {process.map((item, i) => (
               <motion.div
                 key={item.step}
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className={`flex items-center mb-12 ${
-                  i % 2 === 0 ? "justify-start" : "justify-end"
-                }`}
+                transition={{ delay: i * 0.1 }}
+                className="p-6 rounded-2xl border border-white/5 bg-white/5 backdrop-blur"
               >
-                <div className="w-1/2 px-6">
-                  <div className="bg-white rounded-xl p-6 shadow">
-                    <h4 className="font-semibold mb-2">
-                      {item.step}. {item.title}
-                    </h4>
-                    <p className="text-sm text-gray-600">{item.desc}</p>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
+                    <span className="text-white font-semibold">{item.step}</span>
                   </div>
+                  <h3 className="text-xl font-semibold text-white">
+                    {item.title}
+                  </h3>
                 </div>
-
-                <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8
-                  bg-pink-600 text-white rounded-full flex items-center
-                  justify-center text-sm font-medium">
-                  {item.step}
-                </div>
+                <p className="text-gray-300 text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -246,50 +279,42 @@ const Services = () => {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-24 bg-white">
+      <section className="bg-white">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-6"
+          className="max-w-7xl mx-auto px-6 py-16"
         >
-          <div className="bg-black rounded-[32px] p-14 text-white
-            flex flex-col md:flex-row items-center justify-between gap-10">
-
-            <div>
-              <h2 className="text-3xl font-semibold mb-4">
-                Let’s build something that{" "}
-                <span className="text-pink-500">actually matters</span>
+          <div className="rounded-3xl bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 text-white p-12 md:p-16 shadow-[0_30px_80px_-45px_rgba(56,189,248,0.75)] flex flex-col md:flex-row gap-10 md:items-center md:justify-between">
+            <div className="space-y-4 max-w-2xl">
+              <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
+                Ready to transform your technology stack?
               </h2>
-              <p className="text-gray-300 max-w-xl">
-                Infofit Software partners with you to design, develop and deliver
-                technology that creates measurable, real-world impact.
+              <p className="text-white/85">
+                Let's discuss how our services can accelerate your digital
+                transformation journey.
               </p>
             </div>
 
-            <div className="flex gap-4">
-              <a
-                href="/contact"
-                className="px-8 py-4 bg-pink-600 rounded-full
-                text-sm font-medium hover:opacity-90"
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-white text-indigo-700 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
               >
-                Start a Conversation
-              </a>
-              <a
-                href="/about"
-                className="px-8 py-4 border border-gray-600 rounded-full
-                text-sm font-medium hover:border-white"
+                Start a conversation
+              </Link>
+              <Link
+                to="/industries"
+                className="px-8 py-4 border border-white/60 text-white rounded-full font-semibold hover:bg-white/10 transition-all"
               >
-                About Us
-              </a>
+                Explore industries
+              </Link>
             </div>
-
           </div>
         </motion.div>
       </section>
-
     </main>
   );
 };
